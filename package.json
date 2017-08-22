@@ -1,0 +1,22 @@
+{
+  "name": "dialog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksc-fx/dialog.git"
+  },
+  "keywords": [
+    "dialog"
+  ],
+  "author": "fanzhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksc-fx/dialog/issues"
+  },
+  "homepage": "https://github.com/ksc-fx/dialog#readme"
+}
