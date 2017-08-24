@@ -1,0 +1,141 @@
+<template>
+    <transition name="container-fade"  >
+    <div class="dialog-container" v-show="isShow" >
+        <div class="dialog-wrapper" @click="onClose">
+            <transition name="fade">
+            <div class="dialog" @click.stop.prevent=""  v-show="isShow">
+                <div class="dialog-header">标题</div>
+                <div class="dialog-body">
+                      <slot name="body"> 我是内容 </slot>
+                </div>
+                <div class="dialog-footer">
+                    <slot name="footer"> 我是footer </slot>
+                </div>
+            </div>
+            </transition>
+        </div>
+        <div class="v-modal"></div>
+    </div>
+    </transition>
+    <!--<transition name="container-fade"> </transition>-->
+</template>
+<style lang="less">
+
+
+
+    .fade-leave-active,.fade-enter-active {
+        transition: all .3s ease;
+    }
+
+    .fade-enter, .fade-leave-to{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+
+    .container-fade-enter-active, .container-fade-leave-active {
+        transition: all .3s ease;
+    }
+    .container-fade-enter,.container-fade-leave-to{
+        opacity: 0;
+    }
+
+
+    .dialog-container{
+
+        .v-modal {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .5;
+            background: #000;
+            z-index: 100;
+        }
+        .dialog-wrapper {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 101;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .dialog{
+                padding:15px;
+                /*position: absolute;*/
+                /*width:30%;*/
+                /*top:15%;*/
+                /*left:50%;*/
+
+
+                /*transform: translateX(-50%);*/
+                /*margin-left:-50%;*/
+                background: #fff;
+                border-radius: 2px;
+                .dialog-header{
+                    font-size:16px;
+                    font-weight: 400;
+                }
+                .dialog-body{
+                    padding:20px;
+                    font-size:14px;
+                    color:#48576a;
+                }
+                .dialog-footer{
+                    padding:10px 20px 15px;
+                    text-align:right;
+                }
+            }
+        }
+    }
+</style>
+<script>
+    import buttonEl from 'pcadmin-button';
+    export default{
+        name: "dialog",
+        props: {
+            title: {
+                type: String,
+                default: 'title'
+            },
+            isShow: {
+                type:Boolean,
+                default:false
+            }
+        },
+        data(){
+            return {
+            }
+        },
+        watch: {},
+        computed: {},
+        mounted() {
+            setTimeout(()=>{
+            },1000);
+        },
+
+        methods: {
+            onConfirm(event){
+                this.$emit('confirm', event);
+            },
+            onCancel(){
+                this.$emit('cancel', event);
+            },
+            onClose(event) {
+
+                this.$emit('update:isShow', false)
+                this.$emit('close', event);
+
+
+            }
+        },
+        components:{
+            buttonEl
+        }
+    }
+</script>
