@@ -109,12 +109,14 @@
         },
 
         methods: {
+            /*
             onConfirm(event){
                 this.$emit('confirm', event);
             },
             onCancel(){
                 this.$emit('cancel', event);
             },
+            */
             onClose(event) {
                 this.$emit('update:isShow', false)
                 this.$emit('close', event);
