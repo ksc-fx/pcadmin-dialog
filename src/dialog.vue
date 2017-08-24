@@ -17,7 +17,6 @@
         <div class="v-modal"></div>
     </div>
     </transition>
-    <!--<transition name="container-fade"> </transition>-->
 </template>
 <style lang="less">
 
@@ -67,14 +66,6 @@
 
             .dialog{
                 padding:15px;
-                /*position: absolute;*/
-                /*width:30%;*/
-                /*top:15%;*/
-                /*left:50%;*/
-
-
-                /*transform: translateX(-50%);*/
-                /*margin-left:-50%;*/
                 background: #fff;
                 border-radius: 2px;
                 .dialog-header{
@@ -95,7 +86,6 @@
     }
 </style>
 <script>
-    import buttonEl from 'pcadmin-button';
     export default{
         name: "dialog",
         props: {
@@ -115,8 +105,7 @@
         watch: {},
         computed: {},
         mounted() {
-            setTimeout(()=>{
-            },1000);
+
         },
 
         methods: {
@@ -127,15 +116,11 @@
                 this.$emit('cancel', event);
             },
             onClose(event) {
-
                 this.$emit('update:isShow', false)
                 this.$emit('close', event);
-
-
             }
         },
         components:{
-            buttonEl
         }
     }
 </script>
