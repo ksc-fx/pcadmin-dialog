@@ -15,8 +15,8 @@
     "dialog"
   ],
   "dependencies": {
-    "pcadmin-base": "^1.0.0",
-    "pcadmin-button": "^1.0.2",
+    "pcadmin-base": "^1.0.6",
+    "pcadmin-button": "^1.0.11",
     "vue": "^2.2.2"
   },
   "devDependencies": {

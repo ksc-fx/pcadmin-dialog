@@ -1,12 +1,12 @@
 <template>
     <div>
-        <button-el @click="onClick">测试</button-el>
-        <dialog-ele title="测试标题" :isShow.sync="isShow" >
-            <div slot="body">测试内容</div>
+        <btn @click.native="onClick">打开窗口</btn>
+        <dialog-el title="窗口标题" :isShow.sync="isShow" >
+            <div slot="body">窗口内容</div>
             <div slot="footer">
-                <button-el type="primary" color="orange" @click.stop.prevent="onConfirm">确认</button-el> <button-el  @click.stop.prevent="onCancel">取消</button-el>
+                <btn type="primary" color="orange" @click.native.stop.prevent="onConfirm">确认</btn> <btn  @click.native.stop.prevent="onCancel">取消</btn>
             </div>
-        </dialog-ele>
+        </dialog-el>
     </div>
 </template>
 
@@ -15,8 +15,8 @@
 
 <script>
 
-    import buttonEl from 'pcadmin-button';
-    import dialogEle from "../src/dialog.vue";
+    import btn from 'pcadmin-button';
+    import dialogEl from "../src/dialog.vue";
 
     export default {
         data(){
@@ -30,12 +30,12 @@
         methods: {
 
             onClick(){
+                console.log('on click..........');
                 this.isShow =  true;
             },
             onConfirm(){
                 console.log('onConfirm');
                 this.isShow =  false;
-
             },
             onCancel(){
                 console.log('on cancel....');
@@ -43,8 +43,8 @@
             }
         },
         components: {
-            buttonEl,
-            dialogEle
+            btn,
+            dialogEl
         }
     }
 </script>
