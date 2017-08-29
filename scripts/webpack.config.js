@@ -4,11 +4,11 @@ var utils = require('./utils');
 module.exports = {
   entry: {
     //项目的入口文件
-    app:["./examples/index.js"]
+    app:["./demo/index.js"]
   },
   output: {
-    path: path.resolve(__dirname, "../examples"),
-    publicPath:"/examples/",
+    path: path.resolve(__dirname, "../demo"),
+    publicPath:"/demo/",
     filename:"bundle.js"
   },
   module: {

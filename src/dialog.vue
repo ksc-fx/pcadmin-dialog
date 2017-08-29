@@ -18,9 +18,9 @@
     </div>
     </transition>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 
-
+    @import '~pcadmin-base/src/css/var.less';
 
     .fade-leave-active,.fade-enter-active {
         transition: all .3s ease;

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base examples --inline  --config scripts/webpack.config.js",
+    "dev": "webpack-dev-server --content-base demo --inline  --config scripts/webpack.config.js",
     "build": "webpack -p -d --config scripts/webpack.config.js"
   },
   "repository": {
