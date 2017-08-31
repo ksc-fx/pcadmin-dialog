@@ -53,11 +53,10 @@
             z-index: 100;
         }
         .dialog-wrapper {
-            position: absolute;
+            position: fixed;
             left: 0;
-            right: 0;
             top: 0;
-            bottom: 0;
+            height:100vh;
             margin: auto;
             z-index: 101;
             display: flex;
@@ -102,7 +101,15 @@
             return {
             }
         },
-        watch: {},
+        watch: {
+            isShow(newVal,oldVal){
+                if(newVal){
+                    document.body.style.overflow = 'hidden';
+                }else{
+                    document.body.style.overflow = '';
+                }
+            }
+        },
         computed: {},
         mounted() {
 
